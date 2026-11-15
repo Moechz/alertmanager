@@ -1,0 +1,111 @@
+{
+  "app_id": "alertmanagerdocker",
+  "title": "Alertmanager",
+  "image": "prom/alertmanager:v0.35.0",
+  "repo_name": "alertmanager",
+  "mode": "wrapper",
+  "container_port": 9093,
+  "category": [
+    "Utilities"
+  ],
+  "volumes": [
+    {
+      "host": "/Volume1/DockerAppData/alertmanagerdocker/alertmanager",
+      "container": "/alertmanager"
+    }
+  ],
+  "env": {
+    "TZ": "Asia/Shanghai"
+  },
+  "auth": "prometheus",
+  "upstream_url": "https://github.com/prometheus/alertmanager",
+  "upstream_license": "Apache-2.0",
+  "descript": "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it.",
+  "release_note": "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder.",
+  "important": "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet.",
+  "probe": {
+    "user_in_image": "nobody",
+    "entrypoint": [
+      "/bin/alertmanager"
+    ],
+    "cmd": [
+      "--config.file=/etc/alertmanager/alertmanager.yml",
+      "--storage.path=/alertmanager"
+    ],
+    "exposed_ports": [
+      9093
+    ],
+    "declared_volumes": [
+      "/alertmanager"
+    ],
+    "image_healthcheck": [],
+    "digest": "prom/alertmanager@sha256:e638797febd034838eca8b98cdbd46f951e9bf7f178777aa8669167406a9946c",
+    "architecture": "x86_64",
+    "platforms": [
+      "x86_64",
+      "aarch64"
+    ],
+    "http_client_in_image": "wget",
+    "trial_run": {
+      "ok": true,
+      "http_code": "200",
+      "state": "running",
+      "paths": [],
+      "host_port": 18000,
+      "log_tail": "time=2026-11-15T08:18:47.173Z level=INFO source=app.go:191 msg=\"Starting Alertmanager\" version=\"(version=0.35.0, branch=HEAD, revision=8cf67a8e75004bad6c3c6bacc829945cf8a3ee65)\"\ntime=2026-11-15T08:18:47.173Z level=INFO source=app.go:193 msg=\"Build context\" build_context=\"(go=go1.27.3, platform=linux/amd64, user=root@a39990983e5e, date=20261109-16:47:15, tags=netgo)\"\ntime=2026-11-15T08:18:47.174Z level=INFO source=cluster.go:192 msg=\"setting advertise address explicitly\" component=cluster addr=172.17.0.3 port=9094\ntime=2026-11-15T08:18:47.176Z level=INFO source=cluster.go:682 msg=\"Waiting for gossip to settle...\" component=cluster interval=2s\ntime=2026-11-15T08:18:47.228Z level=INFO source=tls_config.go:395 msg=\"Listening on\" address=[::]:9093\ntime=2026-11-15T08:18:47.229Z level=INFO source=tls_config.go:398 msg=\"TLS is disabled.\" http2=false address=[::]:9093\ntime=2026-11-15T08:18:49.177Z level=INFO source=cluster.go:707 msg=\"gossip not settled\" component=cluster polls=0 before=0 now=1 elapsed=2.000509195s",
+      "files_in_mounts": ""
+    },
+    "docker_hub": {},
+    "github": {
+      "owner": "prometheus",
+      "repo": "alertmanager",
+      "description": "Prometheus Alertmanager",
+      "license": "Apache-2.0",
+      "homepage": "https://prometheus.io"
+    }
+  },
+  "healthcheck": [
+    "CMD-SHELL",
+    "wget -q -O /dev/null http://127.0.0.1:9093/ || exit 1"
+  ],
+  "platform": "x86_64",
+  "user": "1000:1000",
+  "publisher": "Moechz",
+  "compose_project": "alertmanagerdocker",
+  "github_repo": "alertmanager",
+  "upstream_version": "0.35.0",
+  "release_tag_prefix": "v",
+  "version": "0.35.0-1",
+  "help": "https://github.com/Moechz/alertmanager/issues",
+  "official": "https://github.com/prometheus/alertmanager",
+  "license": "Apache-2.0",
+  "docker_socket": false,
+  "group_add": [],
+  "entrypoint_file": "src/entrypoint.sh",
+  "host_port": 8162,
+  "healthcheck_start_period": "30s",
+  "wrapper_note": "the image ships no configuration and exits without one. This wrapper writes a\nminimal routing config on the first start so the UI comes up, then runs\nalertmanager with the config and storage on the mounted volume.",
+  "wrapper_note_readme": "- **Entrypoint wrapper**: seeds a minimal `alertmanager.yml` on first start and runs alertmanager with `--config.file` and `--storage.path` on the volume.",
+  "translations": {
+    "zh-cn": {
+      "descript": "Alertmanager 是 Prometheus 体系的告警路由：接收告警、分组去重、静默噪音，并把通知投递到邮件、Slack、webhook 或 ntfy。本包独立运行它，配置与通知状态保存在应用数据目录，把 Prometheus 指过来即可。",
+      "important": "需要 DockerEngine（缺失时应用中心会自动安装）。首次启动会写入一个最小配置到 DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml；在里面添加接收器（邮件、Slack、webhook）与路由后重启。把 Prometheus 指向 http://<NAS-IP>:<端口>。要让其它机器上报，请仅在内网开放端口。界面为纯 HTTP，暴露到公网前请配置带 TLS 的反向代理。",
+      "release_note": "1. 首个版本：基于 Docker Hub 的 Alertmanager 0.35.0，以非 root 容器运行。告警分组、去重、静默与通知；配置与状态保存在应用数据目录。"
+    },
+    "zh-hk": {
+      "descript": "Alertmanager 是 Prometheus 體系的告警路由：接收告警、分組去重、靜默噪音，並把通知投遞到郵件、Slack、webhook 或 ntfy。本包獨立運行它，設定與通知狀態保存在應用資料目錄，把 Prometheus 指過來即可。",
+      "important": "需要 DockerEngine（缺少時應用中心會自動安裝）。首次啟動會寫入一個最小設定到 DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml；在裡面新增接收器（郵件、Slack、webhook）與路由後重啟。把 Prometheus 指向 http://<NAS-IP>:<端口>。要讓其它機器上報，請只在內網開放端口。介面為純 HTTP，公開到互聯網前請配置帶 TLS 的反向代理。",
+      "release_note": "1. 首個版本：基於 Docker Hub 的 Alertmanager 0.35.0，以非 root 容器運行。告警分組、去重、靜默與通知；設定與狀態保存在應用資料目錄。"
+    }
+  },
+  "data_notes": "`/alertmanager` (mounted from `DockerAppData/alertmanagerdocker/alertmanager`) holds the config, the silences database and the notification log.",
+  "design_notes": [
+    "**Config seeded on first start.** The image refuses to start without a config file; the wrapper writes a minimal route/receiver so the UI is usable immediately.",
+    "**Runs as uid 1000.** Only the storage path needs to be writable."
+  ],
+  "limitations": [
+    "- It routes alerts; it does not collect metrics - Prometheus (or compatible) must send to it.",
+    "- Notification delivery depends on outbound network access and the receivers you configure.",
+    "- The UI is plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+  ]
+}

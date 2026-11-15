@@ -1,0 +1,195 @@
+# ===========================================================================
+# Multilingual file for the TOS 7 Docker application "alertmanagerdocker".
+# File name MUST be: <appid>.lang.  23-language superset (14 required by TOS).
+# The App Center picks the text matching the user's device language;
+# untranslated nodes fall back to English, which the official guide allows.
+# Fields: name (app title), auth (upstream author), descript (up to 512
+# chars), release_note, important (up to 512 chars).
+# Translations come from tosapp.json "translations"; run
+#   tosdocker lang <app>          to re-render this file
+#   tosdocker translate <app>     to see what still needs translating
+# ===========================================================================
+[en-us]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[zh-cn]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager 是 Prometheus 体系的告警路由：接收告警、分组去重、静默噪音，并把通知投递到邮件、Slack、webhook 或 ntfy。本包独立运行它，配置与通知状态保存在应用数据目录，把 Prometheus 指过来即可。"
+release_note = "1. 首个版本：基于 Docker Hub 的 Alertmanager 0.35.0，以非 root 容器运行。告警分组、去重、静默与通知；配置与状态保存在应用数据目录。"
+important    = "需要 DockerEngine（缺失时应用中心会自动安装）。首次启动会写入一个最小配置到 DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml；在里面添加接收器（邮件、Slack、webhook）与路由后重启。把 Prometheus 指向 http://<NAS-IP>:<端口>。要让其它机器上报，请仅在内网开放端口。界面为纯 HTTP，暴露到公网前请配置带 TLS 的反向代理。"
+
+[zh-hk]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager 是 Prometheus 體系的告警路由：接收告警、分組去重、靜默噪音，並把通知投遞到郵件、Slack、webhook 或 ntfy。本包獨立運行它，設定與通知狀態保存在應用資料目錄，把 Prometheus 指過來即可。"
+release_note = "1. 首個版本：基於 Docker Hub 的 Alertmanager 0.35.0，以非 root 容器運行。告警分組、去重、靜默與通知；設定與狀態保存在應用資料目錄。"
+important    = "需要 DockerEngine（缺少時應用中心會自動安裝）。首次啟動會寫入一個最小設定到 DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml；在裡面新增接收器（郵件、Slack、webhook）與路由後重啟。把 Prometheus 指向 http://<NAS-IP>:<端口>。要讓其它機器上報，請只在內網開放端口。介面為純 HTTP，公開到互聯網前請配置帶 TLS 的反向代理。"
+
+[fr-fr]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[de-de]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[it-it]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[es-es]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[hu-hu]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[ja-jp]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[ko-kr]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[pl-pl]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[ru-ru]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[tr-tr]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[pt-pt]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[ar-sa]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[cs-cz]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[he-il]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[id-id]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[nb-no]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[nl-nl]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[sv-se]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[th-th]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[vi-vn]
+name         = "Alertmanager"
+auth         = "prometheus"
+version      = "@@VERSION@@"
+descript     = "Alertmanager is the alert router for the Prometheus stack: it receives alerts, groups and deduplicates them, silences noise, and delivers notifications to email, Slack, webhooks or ntfy. This package runs it standalone with its configuration and notification state in the application data folder - point your Prometheus instances at it."
+release_note = "1. First release: Alertmanager 0.35.0 from Docker Hub as a non-root container. Alert grouping, deduplication, silencing and notifications; config and state in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first start writes a minimal DockerAppData/alertmanagerdocker/alertmanager/alertmanager.yml; add receivers (email, Slack, webhook) and routes there, then restart. Point Prometheus at http://<NAS-IP>:<port>. To receive alerts from other machines, open the port on the LAN only. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
